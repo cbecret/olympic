@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { NgProgressModule } from 'ngx-progressbar';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -32,7 +34,9 @@ import { FireButtonComponent } from './fire-button/fire-button.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    NgProgressModule
   ],
   providers: [],
   bootstrap: [AppComponent]

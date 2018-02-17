@@ -7,10 +7,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class FireButtonComponent implements OnInit {
 
+  @Input() private innerText: string;
   @Input() private width: number = 300;
   @Input() private height: number = 40;
   @Input() private color: string = "#fff";
-
 
   constructor() { }
 

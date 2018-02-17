@@ -41,6 +41,7 @@ export class EarthComponent implements OnInit {
 
     this.controls.minDistance = 0;
     this.controls.maxDistance = Infinity;
+    this.controls.enableZoom = false;
 
   }
 
