@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    width: 100vw;
+    height: 72px;
+    margin: 0;
+    top: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header__logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 100px;
+    background: center no-repeat;
+    background-size: contain;
+    z-index: 101;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu__title {
+}
+
+.menu__item {
+    margin: 0 32px;
+    list-style: none;
+}
+
+.menu__button {
+    text-transform: uppercase;
+    color: black;
+    cursor: pointer;
+}

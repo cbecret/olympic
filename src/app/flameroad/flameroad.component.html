@@ -1,0 +1,16 @@
+<div class="flameroad" [class.flameroad--open]="isOpen">
+  <div class="flameroad__content">
+    <h2 class="flameroad__title">Parcours de la flamme</h2>
+    <img src="" alt="" class="flameroad__background">
+    <div class="flameroad__footer">
+      <p class="flameroad__footerTown">Acapulco</p>
+      <div class="flameroad__arrows">
+        <button (click)="previousTown()" class="flameroad__leftArrow"> <= </button>
+        <button (click)="nextTown()" class="flameroad__rightArrow"> => </button>
+      </div>
+    </div>
+    <button (click)="toggleFlameroad()"
+      class="flameroad__toggleBtn"
+    ></button>
+  </div>
+</div>

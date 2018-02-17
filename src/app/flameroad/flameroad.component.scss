@@ -1,0 +1,71 @@
+.flameroad {
+    position: absolute;
+    height: 100vh;
+    width: 400px;
+    right: -400px;
+    background-color: grey;
+    transition: right 0.5s ease-in-out;
+    z-index: 10;
+
+    &--open {
+        right: 0px;
+    }
+}
+
+.flameroad__content {
+    width: 100%;
+    height: 100%;
+}
+
+.flameroad__title {
+    margin: 20px;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.flameroad__background {
+    background-image: url('');
+    background-position: fixed;
+}
+
+.flameroad__footer {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    bottom: 20px;
+    background-color: white;
+}
+
+.flameroad__footerTown {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.flameroad__arrows {
+    display: flex;
+    color: black;
+    font-size: 20px;
+    width: 60px;
+    height: 100%;
+}
+
+.flameroad__leftArrow {
+    width: 30px;
+    height: 30px;
+}
+
+.flameroad__rightArrow {
+    width: 30px;
+    height: 30px;
+}
+
+.flameroad__toggleBtn {
+    width: 35px;
+    height: 35px;
+    top: 100px;
+    margin-left: -35px;
+    background-color: red;
+}

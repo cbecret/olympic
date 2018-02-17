@@ -1,0 +1,85 @@
+.imagegrid {
+    // position: absolute;
+    overflow: hidden;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 200vh;
+
+    @media screen AND (min-width: 800px) {
+        display: flex;
+        height: 100vh;
+    }
+}
+
+.imagegrid__left {
+    display:flex;
+    height: 100vh;
+    flex-direction: column;
+    flex-grow: 2;
+    background-color: red;
+}
+
+.imagegrid__leftTop {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    background-color: yellow;
+}
+
+.imagegrid__leftTopLeft {
+    flex-grow: 2;
+}
+
+.imagegrid__leftTopRight {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.imagegrid__leftTopRightTop {
+    background-color: olive;
+    flex-grow: 1;
+}
+
+.imagegrid__leftTopRightBottom {
+    background-color: aqua;
+    flex-grow: 1;
+}
+
+.imagegrid__leftBottom {
+    flex-grow: 2;
+}
+
+.imagegrid__right {
+    display:flex;
+    height: 100vh;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.imagegrid__rightTop {
+    flex-grow: 2;
+}
+
+.imagegrid__rightBottom {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.imagegrid__rightBottomLeft {
+    flex-grow: 1;
+    background-color: navy;
+}
+
+.imagegrid__rightBottomRight {
+    flex-grow: 3;
+    background-color: brown;
+}
+
+.imagegrid__image {
+    width: 100%;
+    height: 100%;
+}
