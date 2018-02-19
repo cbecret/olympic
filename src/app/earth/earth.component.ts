@@ -21,7 +21,7 @@ export class EarthComponent implements OnInit {
   clouds = null;
   isocentre = null;
   controls = null;
-  radius: number = 10;
+  radius: number = 8;
   paths = [];
 
   gpsParis = {
@@ -32,6 +32,30 @@ export class EarthComponent implements OnInit {
     lon: 37.983810,
     lat: 23.727539,
   };
+  gpsMexico = {
+    lat: -99.260252,
+    lon: 19.423870
+  };
+  mexico = null;
+  bigmexico = null;
+  gpsSydney = {
+    lat: 151.209900,
+    lon: -33.865143
+  };
+  sydney = null;
+  bigsydney = null;
+  gpsBeijing = {
+    lat: 116.39723,
+    lon: 39.9075
+  };
+  beijing = null;
+  bigbeijing = null;
+  gpsSotchi = {
+    lat: 39.729996,
+    lon: 43.588348
+  };
+  sotchi = null;
+  bigsotchi = null;
 
   constructor() {
     this.scene = new THREE.Scene();
@@ -52,7 +76,16 @@ export class EarthComponent implements OnInit {
 
     this.animate();
 
-    this.wip();
+    this.mexico = this.drawPath(this.gpsAthens, this.gpsMexico, '#0480C9', 12, 0.04, 0.6);
+    this.bigmexico = this.drawPath(this.gpsAthens, this.gpsMexico, '#0480C9', 12, 0.08, 0);
+    this.sydney = this.drawPath(this.gpsAthens, this.gpsSydney, '#50E3C2', 10.5, 0.04, 0.6);
+    this.bigsydney = this.drawPath(this.gpsAthens, this.gpsSydney, '#50E3C2', 10.5, 0.08, 0);
+    this.beijing = this.drawPath(this.gpsAthens, this.gpsBeijing, '#ED1941', 13, 0.04, 0.6);
+    this.bigbeijing = this.drawPath(this.gpsAthens, this.gpsBeijing, '#ED1941', 13, 0.08, 0);
+    this.sotchi = this.drawPath(this.gpsAthens, this.gpsSotchi, '#86450C', 14.5, 0.04, 0.6);
+    this.bigsotchi = this.drawPath(this.gpsAthens, this.gpsSotchi, '#86450C', 14.5, 0.08, 0);
+
+
     this.animate();
   }
 
@@ -107,7 +140,7 @@ export class EarthComponent implements OnInit {
     });
 
     // Stars //
-    const starGeometry = new THREE.SphereGeometry(200, 50, 50);
+    const starGeometry = new THREE.SphereGeometry(80, 20, 20);
     const starMaterial = new THREE.MeshPhongMaterial({
       map: new THREE.ImageUtils.loadTexture("./assets/2048x1024.png"),
       side: THREE.DoubleSide,
@@ -130,7 +163,6 @@ export class EarthComponent implements OnInit {
     this.scene.add(this.isocentre);
   }
 
-
   convertToCartesian(lon, lat) {
     let phiFrom = lon * Math.PI / 180;
     let thetaFrom = (lat + 90) * Math.PI / 180;
@@ -143,13 +175,24 @@ export class EarthComponent implements OnInit {
     return res;
   }
 
-  wip() {
+  enter(city) {
+    this[city].material.color.setHex( 0xffffff );
+    let bigCity = 'big' + city;
+    this[bigCity].material.opacity = 0.7;
+  }
+  leave(city, color) {
+    this[city].material.color.setHex( color );
+    let bigCity = 'big' + city;
+    this[bigCity].material.opacity = 0;
+  }
 
-    let parisCoords = this.convertToCartesian(this.gpsParis.lon, this.gpsParis.lat);
-    let athensCoords = this.convertToCartesian(this.gpsAthens.lon, this.gpsAthens.lat);
+  drawPath(start, end, color, height, radius, opacity) {
 
-    var vT = new THREE.Vector3(parisCoords.x, parisCoords.y, parisCoords.z);
-    var vF = new THREE.Vector3(athensCoords.x, athensCoords.y, athensCoords.z);
+    let startCoords = this.convertToCartesian(start.lon, start.lat);
+    let endCoords = this.convertToCartesian(end.lon, end.lat);
+
+    var vT = new THREE.Vector3(startCoords.x, startCoords.y, startCoords.z);
+    var vF = new THREE.Vector3(endCoords.x, endCoords.y, endCoords.z);
 
     var dist = vF.distanceTo(vT);
  
@@ -166,7 +209,7 @@ export class EarthComponent implements OnInit {
     // then we create a vector for the midpoints.
     var mid = new THREE.Vector3(xC, yC, zC);
 
-    var smoothDist = map(dist, 0, 14.5, 0, 15/dist );
+    var smoothDist = map(dist, 0, height, 0, 15/dist );
     
     mid.setLength( this.radius * smoothDist );
     
@@ -176,17 +219,18 @@ export class EarthComponent implements OnInit {
     cvT.setLength( this.radius * smoothDist );
     cvF.setLength( this.radius * smoothDist );
 
-    function map( x,  in_min,  in_max,  out_min,  out_max){
+    function map( x, in_min, in_max, out_min, out_max){
       return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
 
     var curve = new THREE.CubicBezierCurve3( vF, cvF, cvT, vT );
 
-    var geometry = new THREE.TubeGeometry( curve, 20, 0.02, 8, false );
-    var material = new THREE.MeshBasicMaterial( { color: 0xff00ff, opacity: 0.5 } );
+    var geometry = new THREE.TubeGeometry( curve, 20, radius, 8, false );
+    var material = new THREE.MeshBasicMaterial( { color: color, transparent: true, opacity: opacity } );
     var mesh = new THREE.Mesh( geometry, material );
     this.isocentre.add( mesh );
 
+    return mesh;
   }
 
 }

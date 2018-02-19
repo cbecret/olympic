@@ -6,4 +6,4 @@ interface NodeModule {
 
 declare module 'three';
 
-declare var require: NodeRequire;
+declare var require: any;

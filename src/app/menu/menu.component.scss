@@ -7,7 +7,7 @@
     right: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     z-index: 100;
 }
 
@@ -23,7 +23,8 @@
 .menu {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: 0px;
 }
 
 .menu__title {
@@ -32,10 +33,19 @@
 .menu__item {
     margin: 0 32px;
     list-style: none;
+    top: 0;
 }
 
 .menu__button {
+    margin-top: 0px;
+    padding-top: 16px;
     text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
     color: black;
     cursor: pointer;
+}
+
+.menu__actif {
+    padding-top: 14px;
+    border-top: 2px solid black;
 }

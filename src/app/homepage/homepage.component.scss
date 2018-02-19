@@ -117,3 +117,9 @@
     top: 500px;
     left: 900px;
 }
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

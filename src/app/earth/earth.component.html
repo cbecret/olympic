@@ -1,5 +1,69 @@
 <div class="earth__container">
   <div #rendererContainer></div>
+  <div class="buttons">
+    <void-button
+      (mouseenter)="enter('mexico')"
+      (mouseleave)="leave('mexico', '0x0480C9')"
+      name="Mexico 1968"
+      desc="Le nouveau monde"
+      width="150px"
+      height="48px"
+      color="#0480C9"
+    ></void-button>
+    <void-button
+      (mouseenter)="enter('sydney')"
+      (mouseleave)="leave('sydney', '0x50E3C2')"
+      name="Sydney 2000"
+      desc="Le relai la tête en bas"
+      width="150px"
+      height="48px"
+      color="#50E3C2"
+    ></void-button>
+    <void-button
+      (mouseenter)="enter('beijing')"
+      (mouseleave)="leave('beijing', '0xED1941')"
+      name="Beijing 2008"
+      desc="Voyage en harmonie"
+      width="150px"
+      height="48px"
+      color="#ED1941"
+    ></void-button>
+    <void-button
+      (mouseenter)="enter('sotchi')"
+      (mouseleave)="leave('sotchi', '0x86450C')"
+      name="Sotchi 2014"
+      desc="Undefined name"
+      width="150px"
+      height="48px"
+      color="#86450C"
+    ></void-button>
+  </div>
+
+  <div class="recap">
+    <h1 class="title">{{name}}</h1>
+    <h5 class="subtitle">{{desc}}</h5>
+    <p class="anecdote">
+      Une brasse pour la flamme
+      <span class="date">Veracruz (6 octobre 1968)</span>
+    </p>
+    <p class="anecdote">
+      Une brasse pour la flamme
+      <span class="date">Veracruz (6 octobre 1968)</span>
+    </p>
+    <p class="anecdote">
+      Une brasse pour la flamme
+      <span class="date">Veracruz (6 octobre 1968)</span>
+    </p>
+    <p class="anecdote">
+      Une brasse pour la flamme
+      <span class="date">Veracruz (6 octobre 1968)</span>
+    </p>
+    <p class="anecdote">
+      Une brasse pour la flamme
+      <span class="date">Veracruz (6 octobre 1968)</span>
+    </p>
+    <fire-button></fire-button>
+  </div>
 </div>
 
 

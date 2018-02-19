@@ -16,6 +16,7 @@ import { FlamepickerComponent } from './flamepicker/flamepicker.component';
 import { FlameitemComponent } from './flameitem/flameitem.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { FireButtonComponent } from './fire-button/fire-button.component';
+import { VoidButtonComponent } from './void-button/void-button.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FireButtonComponent } from './fire-button/fire-button.component';
     FlamepickerComponent,
     FlameitemComponent,
     BreadcrumbComponent,
-    FireButtonComponent
+    FireButtonComponent,
+    VoidButtonComponent
   ],
   imports: [
     BrowserModule,
