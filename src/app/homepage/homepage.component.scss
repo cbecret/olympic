@@ -24,8 +24,9 @@
     height: 100vh;
     left: 0;
     bottom: 0;
+    background-attachment: fixed;
     background-size: contain;
-    background-position: bottom;
+    background-position: bottom left;
     background-repeat: no-repeat;
     z-index: -11;
 }
@@ -122,4 +123,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+fire-button {
+    display: none;
+
+    @media (min-width: 666px) {
+        display: block;
+    }
 }

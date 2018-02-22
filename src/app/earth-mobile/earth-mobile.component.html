@@ -1,0 +1,66 @@
+<div class="earth__container">
+  <div class="header">
+    <h1 class="title">{{ step_title }}</h1>
+    <h3 class="subtitle">{{ step_desc }}</h3>
+  </div>
+
+  <div #rendererContainer></div>
+  <ng-scrollbar
+    trackX=true
+    class="scroll"
+  >
+    <div class="buttons">
+      <void-button
+        (mouseenter)="enter('mexico')"
+        (mouseleave)="leave('mexico', '0x0480C9')"
+        name="Mexico 1968"
+        desc="Le nouveau monde"
+        width="150px"
+        height="48px"
+        color="#0480C9"
+      ></void-button>
+      <void-button
+        (mouseenter)="enter('sydney')"
+        (mouseleave)="leave('sydney', '0x50E3C2')"
+        name="Sydney 2000"
+        desc="Le relai la tête en bas"
+        width="150px"
+        height="48px"
+        color="#50E3C2"
+      ></void-button>
+      <void-button
+        (mouseenter)="enter('beijing')"
+        (mouseleave)="leave('beijing', '0xED1941')"
+        name="Beijing 2008"
+        desc="Voyage en harmonie"
+        width="150px"
+        height="48px"
+        color="#ED1941"
+      ></void-button>
+      <void-button
+        (mouseenter)="enter('sotchi')"
+        (mouseleave)="leave('sotchi', '0x86450C')"
+        name="Sotchi 2014"
+        desc="Undefined name"
+        width="150px"
+        height="48px"
+        color="#86450C"
+      ></void-button>
+    </div>
+  </ng-scrollbar>
+
+
+    <div class="enter">
+      <void-button
+        name="Voir les anecdotes"
+        width="170px"
+        height="40px"
+        color="#0480C9"
+      ></void-button>
+    </div>
+
+</div>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js'></script>
+<script src='vendor/three.js/examples/js/controls/OrbitControls.js'></script>

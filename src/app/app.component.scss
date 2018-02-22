@@ -50,3 +50,30 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+.slide {
+    width: 100vw;
+    height: 100vh;
+}
+
+.section {
+    width: 100vw;
+    height: calc(100vh - 170px);
+    bottom: 0;
+}
+
+earth {
+    display: none;
+
+    @media (min-width: 666px) {
+        display: block;
+    }
+}
+
+earth-mobile {
+    display: block;
+
+    @media (min-width: 666px) {
+        display: none;
+    }
+}

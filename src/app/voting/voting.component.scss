@@ -1,0 +1,59 @@
+.voting {
+    width: 100vw;
+    height: 100%;
+    padding-top: 100px;
+}
+
+h2 {
+    text-align: center;
+    padding: 0 40px;
+}
+
+p {
+    display: none;
+    text-align: center;
+    padding: 0 20px;
+
+    @media (min-width: 666px) {
+        display: block;
+    }
+}
+
+.image {
+    width: 80vw;
+    height: 50vh;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.parcours {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 240vw;
+    overflow-x: scroll;
+    text-align: center;
+
+    .parcours-name {
+        font-weight: 500;
+        font-size: 2em;
+    }
+
+    .parcours-theme {
+        font-weight: 300;
+        font-size: 1.2em;
+    }
+}
+
+.voting .voteButton {
+    display: flex;
+    margin-top: 16px;
+    justify-content: center;
+    align-items: center;
+}

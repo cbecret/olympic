@@ -3,6 +3,7 @@
     height: 100vh;
     position: relative;
     z-index: 1000;
+    font-family: 'Oswald', sans-serif;
 }
 
 .buttons {
@@ -16,7 +17,44 @@
     left: 0;
 }
 
-void-button {
+void-button,
+fire-button {
     background-color: none !important;
     margin: 20px;
+}
+
+.recap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    
+    h1 {
+        margin: 16px 0;
+    }
+    .subtitle {
+        margin: 0;
+        font-size: 1.4em;
+        font-weight: 300;
+        color: #0480C9;
+    }
+    .anecdote {
+        margin: 16px 0 8px;
+        font-weight: 400;
+    }
+    .date {
+        margin: 0;
+        font-weight: 200;
+    }
+}
+
+#rendererContainer {
+    zoom: 2;
 }

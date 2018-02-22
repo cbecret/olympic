@@ -1,0 +1,61 @@
+.earth__container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 1000;
+    font-family: 'Oswald', sans-serif;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-x: scroll;
+}
+
+void-button {
+    background-color: none !important;
+    margin: 20px;
+}
+
+#rendererContainer {
+    zoom: 2;
+}
+
+.header {
+    position: absolute;
+    top: 60px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+.scroll {
+    height: 20vh;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+}
+
+.enter {
+    position: absolute;
+    bottom: 10px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    void-button {
+        margin: 0;
+    }
+}

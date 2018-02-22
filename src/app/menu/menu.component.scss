@@ -5,40 +5,69 @@
     margin: 0;
     top: 0;
     right: 0;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    z-index: 100;
+    z-index: 1000;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.header:after {
+    right:10px;
+    left:auto;
+    transform:skew(8deg) rotate(3deg);
 }
 
 .header__logo {
-    width: 60px;
-    height: 60px;
-    margin-left: 100px;
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
     background: center no-repeat;
     background-size: contain;
     z-index: 101;
+
+
+    @media (min-width: 666px) {
+        margin-left: 60px;
+    }
 }
 
 .menu {
+    display: none;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 0px;
+
+    @media (min-width: 666px) {
+        display: flex;
+    }
+}
+
+.menu-mobile {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     margin-top: 0px;
-}
 
-.menu__title {
+    @media (min-width: 666px) {
+        display: none;
+    }
 }
 
 .menu__item {
-    margin: 0 32px;
+    padding-top: 30px;
+    margin: 0 16px;
     list-style: none;
     top: 0;
+
+    @media (min-width: 666px) {
+        padding-top: 20px;
+        margin: 0 32px;
+    }
 }
 
 .menu__button {
-    margin-top: 0px;
-    padding-top: 16px;
     text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
     color: black;
