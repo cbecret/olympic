@@ -5,6 +5,14 @@
 body {
     position: relative;
     width: 100vw;
-    height: calc(100% -170px);
+    height: 100vh;
     margin: 0;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
