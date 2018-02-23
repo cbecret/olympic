@@ -38,28 +38,107 @@
       color="#86450C"
     ></void-button>
   </div>
-
-  <div class="recap">
-    <h1 class="title">Mexico 1968</h1>
-    <h5 class="subtitle">Le nouveau monde</h5>
-    <p class="anecdote">La flamme chez Christophe Colomb</p>
-      <p class="date">Gênes (27 août 1968)</p>
-    <p class="anecdote">Une brasse pour la flamme</p>
-      <p class="date">Veracruz (6 octobre 1968)</p>
-    <p class="anecdote">La flemme au temps des Aztèques</p>
-      <p class="date">Teotihuacan (11 octobre 1968)</p>
-    <p class="anecdote">Première femme à porter la flemme</p>
-      <p class="date">Mexico city (12 août 1968)</p>
-    <p class="anecdote">La flemme prend la vague</p>
-      <p class="date">Acapulco (13 octobre 1968)</p>
+  <div
+  *ngIf="lastSelected !== null"
+  class="recap">
+    <h1 class="title">{{ recap['title'] }}</h1>
+    <h5 class="subtitle" [style.color]="recap['color']">{{ recap['theme'] }}</h5>
+    <p class="anecdote">Départ de la flamme</p>
+      <p class="date">{{ recap['start'] }}</p>
+    <p class="anecdote">Premier porteur</p>
+      <p class="date">{{ recap['first'] }}</p>
+    <p class="anecdote">Arrivée de la flamme</p>
+      <p class="date">{{ recap['end'] }}</p>
+    <p class="anecdote">Dernier porteur</p>
+      <p class="date">{{ recap['last'] }}</p>
+    <p class="anecdote">Nombre de porteurs</p>
+      <p class="date">{{ recap['nb_bearer'] }}</p>
     <fire-button
         name="Voir les anecdotes"
         width="170px"
         height="40px"
-        color="#0480C9"
+        [color]="recap['color']"
+        (click)="openFlameroad()"
     ></fire-button>
   </div>
+
+  <div class="flameroad flameroad__mexico" [class.flameroad--open]="isOpen && lastSelected == 'mexico'">
+      <div class="flameroad__content">
+        <div class="flameroad__back"
+          (click)="closeFlameroad()"
+        >←</div>
+        <ng-scrollbar
+          trackX=true
+        >
+        <div class="images">
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+        </div>
+        </ng-scrollbar>
+
+      </div>
+  </div>
+
+  <div class="flameroad flameroad__sydney" [class.flameroad--open]="isOpen && lastSelected == 'sydney'">
+      <div class="flameroad__content">
+        <div class="flameroad__back"
+          (click)="closeFlameroad()"
+        >←</div>
+        <ng-scrollbar
+          trackX=true
+        >
+        <div class="images">
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+        </div>
+        </ng-scrollbar>
+
+      </div>
+  </div>
+
+  <div class="flameroad flameroad__beijing" [class.flameroad--open]="isOpen && lastSelected == 'beijing'">
+      <div class="flameroad__content">
+        <div class="flameroad__back"
+          (click)="closeFlameroad()"
+        >←</div>
+        <ng-scrollbar
+          trackX=true
+        >
+        <div class="images">
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+        </div>
+        </ng-scrollbar>
+
+      </div>
+  </div>
+
+  <div class="flameroad flameroad__sotchi" [class.flameroad--open]="isOpen && lastSelected == 'sotchi'">
+      <div class="flameroad__content">
+        <div class="flameroad__back"
+          (click)="closeFlameroad()"
+        >←</div>
+        <ng-scrollbar
+          trackX=true
+        >
+        <div class="images">
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+          <div class="flameroad__image" style="background-image:url('./assets/allumeuse.png')"></div>
+        </div>
+        </ng-scrollbar>
+
+      </div>
+  </div>
 </div>
+
 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/88/three.js'></script>

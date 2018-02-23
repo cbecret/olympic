@@ -11,10 +11,12 @@
     flex-direction: row;
     justify-content: center;
     position: absolute;
-    height: 100vh;
     top: 0;
     left: 0;
-    overflow-x: scroll;
+
+    @media (min-width: 666px) {
+        height: 100vh;
+    }
 }
 
 void-button {

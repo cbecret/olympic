@@ -1,0 +1,58 @@
+.voting {
+    width: 100vw;
+    padding-top: 100px;
+}
+
+h2 {
+    text-align: center;
+    padding: 0 40px;
+}
+
+p {
+    display: none;
+    text-align: center;
+    padding: 0 20px;
+
+    @media (min-width: 666px) {
+        display: block;
+    }
+}
+
+.image {
+    width: 80vw;
+    height: 50vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.torche {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 240vw;
+    bottom: 0;
+    text-align: center;
+
+    .torche-name {
+        font-weight: 500;
+        font-size: 2em;
+    }
+
+    .torche-theme {
+        font-weight: 300;
+        font-size: 1.2em;
+    }
+}
+
+.voting .voteButton {
+    display: flex;
+    margin-top: 16px;
+    justify-content: center;
+    align-items: center;
+}

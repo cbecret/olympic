@@ -14,7 +14,8 @@ import { EarthComponent } from './earth/earth.component';
 import { EarthMobileComponent } from './earth-mobile/earth-mobile.component';
 import { FireButtonComponent } from './fire-button/fire-button.component';
 import { VoidButtonComponent } from './void-button/void-button.component';
-import { VotingComponent } from './voting/voting.component';
+import { VotingPathComponent } from './voting-path/voting-path.component';
+import { VotingTorchComponent } from './voting-torch/voting-torch.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { VotingComponent } from './voting/voting.component';
     EarthMobileComponent,
     FireButtonComponent,
     VoidButtonComponent,
-    VotingComponent
+    VotingPathComponent,
+    VotingTorchComponent
   ],
   imports: [
     BrowserModule,

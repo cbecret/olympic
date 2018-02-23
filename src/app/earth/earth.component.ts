@@ -19,6 +19,19 @@ export class EarthComponent implements OnInit {
     this.renderer.setSize(event.target.innerWidth, event.target.innerHeight);
   }
 
+  isOpen = false;
+  lastSelected = null;
+  recap = {
+    "title": "",
+    "theme": "",
+    "start": "",
+    "first": "",
+    "end": "",
+    "last": "",
+    "nb_bearer": "",
+    "color": ""
+  };
+
   renderer = new THREE.WebGLRenderer();
   scene = null;
   camera = null;
@@ -332,6 +345,8 @@ export class EarthComponent implements OnInit {
   }
 
   enter(city) {
+    this.lastSelected = city;
+    this.updateRecap(city);
     // this[city].material.color.setHex( 0xffffff );
     let bigCity = 'big' + city;
     for (let i = 0; i < this[bigCity].length; i++) {
@@ -344,6 +359,67 @@ export class EarthComponent implements OnInit {
     for (let i = 0; i < this[bigCity].length; i++) {
       this[bigCity][i].material.opacity = 0;
     }
+  }
+
+  updateRecap(city) {
+    switch (city) {
+      case 'mexico':
+        this.recap = {
+          "title": "Mexico 1968",
+          "theme": "Le relais du Nouveau Monde",
+          "start": "23 août 1968",
+          "first": "Haris Aivaliotis",
+          "end": "12 octobre 1968",
+          "last": "Enriqueta Basilio Sotelo",
+          "nb_bearer": "2778",
+          "color": "#0480C9"
+        };
+        break;
+      case 'sydney':
+        this.recap = {
+          "title": "Sydney 2000",
+          "theme": "Le relais “la tête en bas“",
+          "start": "10 mai 2000",
+          "first": "Lambros Papakostas",
+          "end": "15 septembre 2000",
+          "last": "Cathy Freeman",
+          "nb_bearer": "13400",
+          "color": "#50E3C2"
+        };
+        break;
+      case 'beijing':
+        this.recap = {
+          "title": "Pékin 2008",
+          "theme": "Le relais de l'harmonie",
+          "start": "24 mars 2008",
+          "first": "Alexandros Nikolaidis",
+          "end": "08 août 2008",
+          "last": "Ning Li",
+          "nb_bearer": "21800",
+          "color": "#ED1941"
+        };
+        break;
+      case 'sotchi':
+        this.recap = {
+          "title": "Sotchi 2014",
+          "theme": "Le relais hivernal et chaleureux",
+          "start": "29 septembre 2013",
+          "first": "Ioannis Antoniou",
+          "end": "07 février 2014",
+          "last": "Irina Rodnina et Vladislav Tretiak",
+          "nb_bearer": "14250",
+          "color": "#86450C"
+        };
+        break;
+    }
+  }
+
+  openFlameroad() {
+    this.isOpen = true;
+  }
+
+  closeFlameroad() {
+    this.isOpen = false;
   }
 
   drawPath(start, end, color, radius, opacity) {
