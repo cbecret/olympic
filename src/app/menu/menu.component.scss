@@ -1,7 +1,7 @@
 .header {
     position: fixed;
     width: 100vw;
-    height: 72px;
+    height: 60px;
     margin: 0;
     top: 0;
     right: 0;
@@ -14,8 +14,8 @@
 }
 
 .header__logo {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     margin-left: 30px;
     background: center no-repeat;
     background-size: contain;
@@ -58,10 +58,11 @@
     list-style: none;
 
     @media (min-width: 666px) {
-        margin: 0 32px;
+        margin-right: 32px;
     }
     a {
         text-decoration: none;
+        font-size: 12px;
     }
 }
 

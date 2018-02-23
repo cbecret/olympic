@@ -127,10 +127,12 @@
 }
 
 .buttons {
+    padding-left: 40px;
+
     display: flex;
 
     a + a {
-        margin-left: 16px;
+        margin-left: 32px;
     }
 }
 

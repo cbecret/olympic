@@ -38,7 +38,7 @@ export class EarthComponent implements OnInit {
   clouds = null;
   isocentre = null;
   controls = null;
-  radius: number = 7;
+  radius: number = 6;
   paths = [];
 
   mexico = [];
