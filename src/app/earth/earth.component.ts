@@ -227,19 +227,19 @@ export class EarthComponent implements OnInit {
     this.animate();
 
     for (let i = 0; i < this.gpsMexique.length - 1; i++) {
-      this.mexico.push(this.drawPath(this.gpsMexique[i], this.gpsMexique[i+1], '#0480C9', 0.03, 0.5));
+      this.mexico.push(this.drawPath(this.gpsMexique[i], this.gpsMexique[i+1], '#0480C9', 0.03, 0.15));
       this.bigmexico.push(this.drawPath(this.gpsMexique[i], this.gpsMexique[i+1], '#0480C9', 0.03, 0));
     }
     for (let i = 0; i < this.gpsSydney.length - 1; i++) {
-      this.sydney.push(this.drawPath(this.gpsSydney[i], this.gpsSydney[i+1], '#50E3C2', 0.03, 0.5));
+      this.sydney.push(this.drawPath(this.gpsSydney[i], this.gpsSydney[i+1], '#50E3C2', 0.03, 0.15));
       this.bigsydney.push(this.drawPath(this.gpsSydney[i], this.gpsSydney[i+1], '#50E3C2', 0.03, 0));
     }
     for (let i = 0; i < this.gpsBeijing.length - 1; i++) {
-      this.beijing.push(this.drawPath(this.gpsBeijing[i], this.gpsBeijing[i+1], '#ED1941', 0.03, 0.5));
+      this.beijing.push(this.drawPath(this.gpsBeijing[i], this.gpsBeijing[i+1], '#ED1941', 0.03, 0.15));
       this.bigbeijing.push(this.drawPath(this.gpsBeijing[i], this.gpsBeijing[i+1], '#ED1941', 0.03, 0));
     }
     for (let i = 0; i < this.gpsSotchi.length - 1; i++) {
-      this.sotchi.push(this.drawPath(this.gpsSotchi[i], this.gpsSotchi[i+1], '#86450C', 0.03, 0.5));
+      this.sotchi.push(this.drawPath(this.gpsSotchi[i], this.gpsSotchi[i+1], '#86450C', 0.03, 0.15));
       this.bigsotchi.push(this.drawPath(this.gpsSotchi[i], this.gpsSotchi[i+1], '#86450C', 0.03, 0));
     }
 
@@ -350,7 +350,7 @@ export class EarthComponent implements OnInit {
     // this[city].material.color.setHex( 0xffffff );
     let bigCity = 'big' + city;
     for (let i = 0; i < this[bigCity].length; i++) {
-      this[bigCity][i].material.opacity = 0.7;
+      this[bigCity][i].material.opacity = 1;
     }
   }
   leave(city, color) {

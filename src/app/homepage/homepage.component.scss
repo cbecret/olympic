@@ -44,15 +44,19 @@
 
 .description {
     position: absolute;
-    width: 50vw;
+    width: 100vw;
     right: 0;
+
+    @media (min-width: 666px) {
+        width: 50vw;
+    }
 }
 
 .title {
     margin-top: 100px;
-    padding: 40px;
+    padding: 20px 40px;
     text-align: left;
-    font-size: 3.5em;
+    font-size: 3.2em;
     width: 80%;
     font-weight: 300;
     margin-bottom: 0;
@@ -61,7 +65,9 @@
 
 .subtitle {
     padding: 40px;
+    padding-top: 0;
     width: 80%;
+    padding-right: 40px;
     text-align: left;
     font-size: 1.2em;
     font-weight: 200;
@@ -122,8 +128,10 @@
 
 .buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+
+    a + a {
+        margin-left: 16px;
+    }
 }
 
 fire-button {
