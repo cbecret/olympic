@@ -1,13 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-
-
+@font-face {
+    font-family: 'circular';
+    src: url('assets/fonts/CircularStd-Book.woff');
+}    
 
 body {
     position: relative;
     width: 100vw;
     height: 100vh;
     margin: 0;
-    font-family: serif;
+    font-family: circular;
 }
 
 .loader {
