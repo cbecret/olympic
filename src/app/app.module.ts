@@ -4,8 +4,6 @@ import { HttpModule } from '@angular/http';
 import { MnFullpageModule } from 'ngx-fullpage';
 import { ScrollbarModule } from 'ngx-scrollbar';
 
-import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ImagegridComponent } from './imagegrid/imagegrid.component';
@@ -33,7 +31,6 @@ import { VotingTorchComponent } from './voting-torch/voting-torch.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpModule,
     ScrollbarModule,
     MnFullpageModule.forRoot()
