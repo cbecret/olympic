@@ -5,6 +5,9 @@
     border: 1px solid black;
     font-weight: 200;
     padding: 0 10px;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 12px;
 }
 
 .background {
@@ -19,7 +22,6 @@
 
 .name {
     position: absolute;
-    line-height: 2em;
     text-transform: uppercase;
     height: 100%;
     width: 100%;

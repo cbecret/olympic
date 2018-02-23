@@ -10,13 +10,7 @@
     justify-content: space-between;
     align-items: flex-start;
     z-index: 1000;
-    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-}
-
-.header:after {
-    right:10px;
-    left:auto;
-    transform:skew(8deg) rotate(3deg);
+    border-bottom: 1px solid #efefef;
 }
 
 .header__logo {
@@ -36,8 +30,10 @@
 .menu {
     display: none;
     justify-content: flex-end;
-    align-items: flex-start;
     margin-top: 0px;
+    height: 100%;
+    align-items: center;
+    line-height: 72px;
 
     @media (min-width: 666px) {
         display: flex;
@@ -47,7 +43,8 @@
 .menu-mobile {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
+    height: 100%;
     margin-top: 0px;
 
     @media (min-width: 666px) {
@@ -56,14 +53,15 @@
 }
 
 .menu__item {
-    padding-top: 30px;
+    padding: 0;
     margin: 0 16px;
     list-style: none;
-    top: 0;
 
     @media (min-width: 666px) {
-        padding-top: 20px;
         margin: 0 32px;
+    }
+    a {
+        text-decoration: none;
     }
 }
 
